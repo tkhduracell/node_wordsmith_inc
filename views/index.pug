@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  .columns
+    .column
+      h1.title=title       
+      p.subtitle Welcome to #{title}
+  .columns
+    .column
+      h2.title Input
+      form(method="POST", action="/reverse", enctype="application/x-www-form-urlencoded")
+        .field
+          label.label Enter paragraph
+          .control
+            textarea.textarea(name="content", cols="20", rows="6", placeholder="Enter your text here")
+        .field.is-grouped
+          .control
+            button.button.is-link Submit
+    .column
+      h2.title History
+      each item in history
+        .box.content
+          p.title.is-5 Source
+          pre=item.source
+          p.title.is-5 Output
+          pre=item.result
+      else 
+        p.subtitle Nothing here yet, run a paragraph first.
