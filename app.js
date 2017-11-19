@@ -4,8 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var livereload = require('easy-livereload');
-
 var app = express();
 
 // view engine setup
@@ -20,8 +18,16 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 if (app.get('env') === 'development') {
-  app.use(livereload({ app: app }));
+  const livereload = require('livereload')
+  const server = livereload.createServer({exts: ['html', 'pug', 'js', 'css']}, () => {
+    console.log("Live reloading enabled!")
+  })
+  server.watch([
+    __dirname + "/public", 
+    __dirname + "/views"
+  ])
 }
+
 
 var router = require('./router')(app);
 

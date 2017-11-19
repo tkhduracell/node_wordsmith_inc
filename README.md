@@ -15,3 +15,4 @@ A buissnies application for Wordsmith Inc.
 
 ## Local development
  1. `npm run startDev`
+Note: In development live reloading ise enabled. 
