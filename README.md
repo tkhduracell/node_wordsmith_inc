@@ -16,3 +16,9 @@ A buissnies application for Wordsmith Inc.
 ## Local development
  1. `npm run startDev`
 Note: In development live reloading ise enabled. 
+
+## Todo
+ 1. Add End-2-End test
+ 2. Add Api / Controller tests
+ 3. Add Api docs
+ 

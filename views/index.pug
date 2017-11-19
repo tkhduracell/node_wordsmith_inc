@@ -5,6 +5,8 @@ block content
     .column
       h1.title=title       
       p.subtitle Welcome to #{title}
+      p System is also availible as an 
+        a(href="/docs") api.
   .columns
     .column
       h2.title Input
@@ -17,6 +19,7 @@ block content
           .control
             button.button.is-link Submit
     .column
+      a(name="history") 
       h2.title History
       each item in history
         .box.content

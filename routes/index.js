@@ -12,7 +12,7 @@ module.exports = (apiService) => {
 
   router.post('/reverse', function(req, res) {
     apiService.compute(req.body.content)
-    res.redirect('/')
+    res.redirect('/#history')
   });
 
   return router;
