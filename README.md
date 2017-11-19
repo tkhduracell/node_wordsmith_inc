@@ -17,8 +17,15 @@ A buissnies application for Wordsmith Inc.
  1. `npm run startDev`
 Note: In development live reloading ise enabled. 
 
+## NPM Tasks
+A number of scripts come with the appilcation. Yhey are run with `npm run <task>`.
+- `start` Start development server as a deamon in background.
+- `stop` Stop developrment server.
+- `dev` Start development server in foreground with live reload. 
+- `docs` Generate documentation for api endpoints.
+- `test` Run unit tests/specs
+- `test-e2e` Run End-2-End testing against a local environment.
+
 ## Todo
- 1. Add End-2-End test
  2. Add Api / Controller tests
- 3. Add Api docs
  

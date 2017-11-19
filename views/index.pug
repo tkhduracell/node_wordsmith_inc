@@ -22,10 +22,10 @@ block content
       a(name="history") 
       h2.title History
       each item in history
-        .box.content
+        .box.content.history
           p.title.is-5 Source
-          pre=item.source
-          p.title.is-5 Output
-          pre=item.result
+          pre.source=item.source
+          p.title.is-5 Result
+          pre.result=item.result
       else 
         p.subtitle Nothing here yet, run a paragraph first.
