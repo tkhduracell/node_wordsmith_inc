@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var debug = require('debug')('node-wordsmith-inc:server');
 var app = express();
 
 // view engine setup
@@ -20,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 if (app.get('env') === 'development') {
   const livereload = require('livereload')
   const server = livereload.createServer({exts: ['html', 'pug', 'js', 'css']}, () => {
-    console.log("Live reloading enabled!")
+    debug("Live reloading enabled!")
   })
   server.watch([
     __dirname + "/public", 
