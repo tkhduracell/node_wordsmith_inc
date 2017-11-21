@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wordsmith Inc.</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css" integrity="sha256-v5YlJGWVLS5hQ+o48fBzCKHEP2vMNsku57x3CosYykc=" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/app.css">
+    
+    <script src="js/vendor.js"></script>
+    <script src="js/app.js"></script>
+    <script>require('js/initialize');</script>
+    <script>require('js/app');</script>
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h1 class="title">Wordsmith Inc...</h1>
+                    <p class="subtitle">Welcome to Wordsmith Inc.</p>
+                    <p>System is also availible as an <a href="/docs">api.</a>
+                    </p>
+                </div>
+            </div>
+            <div id="app" class="columns">
+                <div class="column">
+                    <h2 class="title">Input</h2>
+                    
+                    <div class="field">
+                        <label class="label">Enter paragraph</label>
+                        <div class="control">
+                            <textarea class="textarea" name="content" cols="20" rows="6" placeholder="Enter your text here"></textarea>
+                        </div>
+                    </div>
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <button class="button is-link">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <a name="history"></a>
+                    <h2 class="title">History</h2>
+                    {{ history }}
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

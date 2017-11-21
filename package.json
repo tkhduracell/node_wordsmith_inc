@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=production forever start ./bin/www",
-    "stop": "NODE_ENV=production forever stop ./bin/www",
     "dev": "NODE_ENV=development forever --watch ./bin/www",
+    "devv": "NODE_ENV=development forever start ./bin/www && (cd webapp && brunch watch) && forever stop ./bin/www ||  forever stop ./bin/www",
     "docs": "apidoc -i routes/ -o public/docs",
     "test": "mocha lib/**/**.spec.js",
-    "test-e2e": "forever start ./bin/www && mocha-casperjs && forever stop ./bin/www ||  forever stop ./bin/www"
+    "test-e2e": "forever start ./bin/www && mocha-casperjs && forever stop ./bin/www ||  forever stop ./bin/www",
+    "build": "brunch build --production"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -30,6 +30,7 @@
     "mocha": "^4.0.1",
     "mocha-casperjs": "^0.6.0",
     "phantomjs-prebuilt": "^2.1.7",
-    "standard": "^10.0.3"
+    "standard": "^10.0.3",
+    "web": "file://./webapp"
   }
 }
