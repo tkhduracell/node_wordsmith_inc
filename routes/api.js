@@ -1,29 +1,36 @@
 module.exports = (service) => {
-  
-  const express = require('express');
-  const router = express.Router();
- 
+  const express = require('express')
+  const router = express.Router()
+
   /**
-   * @api {post} /reverse Reverse paragraph
+   * @api {post} /reverse Reverse paragraph (application/json)
    * @apiName Reverse
    * @apiGroup Main
    *
    * @apiParam {String} content The text content that should be processed.
    *
-   * @apiSuccess {String} output The text conent that has each word reversed. 
+   * @apiSuccess {String} content The original content
+   * @apiSuccess {String} output The text conent that has each word reversed.
    *
+   * @apiHeaderExample {json} Header-Example:
+   *     {
+   *       "Content-Type": "application/json"
+   *     }
    * @apiSuccessExample Success-Response:
    *     HTTP/1.1 200 OK
    *     {
    *       "output": "ytrewq qwerty"
    *     }
    */
-  router.post('/reverse', function(req, res) {
-    res.send(service.compute(req.body))
-  });
+  router.post('/reverse', function (req, res) {
+    res.send({
+      content: req.body.content,
+      output: service.compute(req.body.content)
+    })
+  })
 
   /**
-   * @api {get} /history Get history
+   * @api {get} /history Get history (application/json)
    * @apiName History
    * @apiGroup Main
    *
@@ -37,9 +44,11 @@ module.exports = (service) => {
    *       ]
    *     }
    */
-  router.get('/history', function(req, res) {
-    res.send({history: service.history()})
-  });
+  router.get('/history', function (req, res) {
+    res.send({
+      history: service.history()
+    })
+  })
 
-  return router;
+  return router
 }

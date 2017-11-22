@@ -3,13 +3,13 @@ exports.files = {
   javascripts: {
     joinTo: {
       'js/app.js': /^app\/js/,
-      'js/vendor.js': /^app\/node_modules/
+      'js/vendor.js': /^node_modules/
     }
   },
   stylesheets: {
     joinTo: {
       'css/app.css': /^app\/css/,
-      'css/vendor.css': /^app\/node_modules/
+      'css/vendor.css': /^node_modules/
     }
   }
 }
@@ -17,5 +17,12 @@ exports.files = {
 exports.plugins = {
   babel: {
     presets: ['latest']
+  }
+}
+
+exports.npm = {
+  globals: {
+    $: 'jquery',
+    jQuery: 'jquery'
   }
 }
